@@ -1,0 +1,423 @@
+/* Importing the Poppins font from Google Fonts with multiple font weights and styles */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* Defining root variables for the dark theme */
+:root {
+  /* Dark Theme */
+  --text-color: #edf3ff; /* Text color in dark theme */
+  --subHeading-color: #97a7ca; /* Subheading color in dark theme */
+  --placehoalder-color: #c3cdde; /* Placeholder text color in dark theme */
+  --primary-color: #101623; /* Background color (primary) in dark theme */
+  --secondary-color: #283045; /* Secondary background color in dark theme */
+  --secondary-hover-color: #333e58; /* Hover effect for secondary background */
+  --scrollbar-color: #626a7f; /* Scrollbar color for dark theme */
+}
+
+/* Defining root variables for the light theme */
+body.light-theme {
+  /* Light Theme */
+  --text-color: #212121; /* Text color in light theme */
+  --subheading-color: #757575; /* Subheading color in light theme */
+  --placehoalder-color: #424242; /* Placeholder text color in light theme */
+  --primary-color: #ffffff; /* Background color (primary) in light theme */
+  --secondary-color: #f5f5f5; /* Secondary background color in light theme */
+  --secondary-hover-color: #e0e0e0; /* Hover effect for secondary background */
+  --scrollbar-color: #f5f5f5; /* Scrollbar color for light theme */
+}
+
+/* Universal styling for all elements */
+* {
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  box-sizing: border-box; /* Ensures padding and borders are included in element's total width and height */
+  font-family: "Poppins", serif; /* Set the font family to Poppins */
+}
+
+/* Styling for the body element */
+body {
+  background: var(
+    --primary-color
+  ); /* Set background color based on the theme */
+  color: var(--text-color); /* Set text color based on the theme */
+}
+
+/* Container for the main content */
+.container {
+  padding: 32px 0px 60px; /* Padding around the container */
+  overflow-y: auto; /* Allow vertical scrolling if needed */
+  max-height: calc(
+    100vh - 127px
+  ); /* Limit height to viewport height minus some offset */
+  scrollbar-color: var(--scrollbar-color) transparent; /* Customize scrollbar color */
+}
+
+/* Styling for various sections inside the container */
+.container
+  :where(.app-header, .suggestion, .message, .prompt-wrapper, .disc-text) {
+  margin: 0 auto; /* Center elements horizontally */
+  width: 100%; /* Set width to 100% */
+  padding: 0px 20px; /* Padding on left and right */
+  max-width: 980px; /* Max width for content */
+}
+
+/* Styling for the header section */
+.container .app-header {
+  margin-top: 4vh; /* Margin at the top */
+}
+
+/* Styling for the main heading inside the header */
+.app-header .heading {
+  font-size: 3rem; /* Set font size */
+  width: fit-content; /* Make the width fit the content */
+  background: linear-gradient(
+    to right,
+    #1d7efd,
+    #8f6fff
+  ); /* Gradient background for text */
+  background-clip: text; /* Clip the background to the text */
+  -webkit-background-clip: text; /* Webkit support for background clip */
+  -webkit-text-fill-color: transparent; /* Make the text color transparent */
+}
+
+/* Styling for the subheading inside the header */
+.app-header .sub-heading {
+  font-size: 2.6rem; /* Set font size */
+  margin-top: -5px; /* Margin top adjustment */
+  color: var(--subheading-color); /* Use subheading color from theme */
+}
+
+/* Styling for the suggestions list */
+.container .suggestion {
+  display: flex; /* Use flexbox for layout */
+  gap: 15px; /* Space between items */
+  margin-top: 9.5vh; /* Margin at the top */
+  list-style: none; /* Remove bullet points */
+  overflow-x: auto; /* Allow horizontal scrolling */
+  scrollbar-width: none; /* Hide scrollbar */
+}
+
+/* Styling for each suggestion item */
+.suggestion .suggestion-item {
+  background: var(--secondary-color); /* Set background color */
+  width: 228px; /* Set fixed width */
+  padding: 18px; /* Padding inside the item */
+  border-radius: 15px; /* Rounded corners */
+  flex-shrink: 0; /* Prevent shrinking */
+  display: flex; /* Use flexbox for layout */
+  align-items: flex-end; /* Align items to the bottom */
+  justify-content: space-between; /* Space between the text and icon */
+  flex-direction: column; /* Arrange items in a column */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background 0.3s ease; /* Smooth background transition */
+}
+
+/* Hover effect for suggestion items */
+.suggestion .suggestion-item:hover {
+  background: var(--secondary-hover-color); /* Change background on hover */
+}
+
+/* Styling for the suggestion text */
+.suggestion .suggestion-item .suggestion-text {
+  font-size: 1.1rem; /* Font size for the suggestion text */
+}
+
+/* Styling for the icons inside suggestion items */
+.suggestion .suggestion-item span {
+  width: 45px; /* Set width */
+  height: 45px; /* Set height */
+  margin-top: 35px; /* Top margin */
+  display: flex; /* Flexbox for centering icon */
+  align-self: flex-end; /* Align icon to the right */
+  justify-content: center; /* Center the icon horizontally */
+  align-items: center; /* Center the icon vertically */
+  border-radius: 50%; /* Make the icon round */
+  color: #1d7efd; /* Icon color */
+  background: var(--primary-color); /* Background color of icon */
+}
+
+/* Coloring for specific suggestion icons */
+.suggestion .suggestion-item:nth-child(2) span {
+  color: #28a745; /* Green */
+}
+.suggestion .suggestion-item:nth-child(3) span {
+  color: #dc3545; /* Red */
+}
+.suggestion .suggestion-item:nth-child(4) span {
+  color: #ffc107; /* Yellow */
+}
+.suggestion .suggestion-item:nth-child(5) span {
+  color: #20c997; /* Teal */
+}
+.suggestion .suggestion-item:nth-child(6) span {
+  color: #17a2b8; /* Light blue */
+}
+.suggestion .suggestion-item:nth-child(7) span {
+  color: #3182ce; /* Dark blue */
+}
+
+/* Styling for chat container */
+.container .chat-container {
+  display: flex; /* Flexbox layout */
+  gap: 20px; /* Gap between chat items */
+  flex-direction: column; /* Arrange messages in a column */
+}
+
+/* Styling for individual chat messages */
+.chat-container .message {
+  display: flex; /* Use flexbox for messages */
+  gap: 11px; /* Gap between avatar and text */
+  align-items: center; /* Align items vertically */
+}
+
+/* Styling for bot avatar in chat */
+.chat-container .bot-messages .avatar {
+  width: 43px; /* Avatar size */
+  height: 43px; /* Avatar size */
+  flex-shrink: 0; /* Prevent shrinking */
+  padding: 6px; /* Padding inside avatar */
+  align-self: flex-start; /* Align to the left */
+  margin-right: -7px; /* Adjust right margin */
+  background: var(--secondary-color); /* Avatar background */
+  border-radius: 50%; /* Round avatar */
+  border: 1px solid var(--secondary-hover-color); /* Border around avatar */
+}
+
+/* Animation for bot avatar when loading */
+.chat-container .bot-messages.loading .avatar {
+  animation: rotate 3s linear infinite; /* Infinite rotation animation */
+}
+
+/* Keyframes for rotation animation */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg); /* Start at 0 degrees */
+  }
+  100% {
+    transform: rotate(360deg); /* Rotate to 360 degrees */
+  }
+}
+
+/* Styling for the bot messages */
+.chat-container .bot-messages {
+  margin: 9px auto; /* Center and add margin to bot messages */
+}
+
+/* Styling for text messages */
+.chat-container .message .text-message {
+  padding: 3px 16px; /* Padding inside the text bubble */
+  word-wrap: break-word; /* Wrap words to avoid overflow */
+  white-space: pre-line; /* Preserve line breaks */
+}
+
+/* Styling for user messages */
+.chat-container .user-messages {
+  flex-direction: column; /* Arrange user messages in column */
+  align-items: flex-end; /* Align user messages to the right */
+}
+
+/* Styling for user text message bubbles */
+.chat-container .user-messages .text-message {
+  padding: 12px 16px; /* Padding inside the bubble */
+  max-width: 75%; /* Max width for the message */
+  border-radius: 13px 13px 3px 13px; /* Rounded corners for the message */
+  background: var(--secondary-color); /* Background color for user message */
+}
+
+/* Styling for user image attachment */
+.chat-container .user-messages .img-attachment {
+  width: 50%; /* Width of image */
+  margin-top: -7px; /* Adjust top margin */
+  border-radius: 13px 3px 13px 13px; /* Rounded corners for the image */
+}
+
+/* Styling for file attachments in user messages */
+.chat-container .user-messages .file-attachment {
+  display: flex; /* Flexbox for file attachment layout */
+  gap: 6px; /* Gap between file name and icon */
+  align-items: center; /* Align items vertically */
+  padding: 10px; /* Padding inside the file attachment */
+  margin-top: -7px; /* Adjust top margin */
+  border-radius: 13px 3px 13px 13px; /* Rounded corners for the file attachment */
+  background: var(--secondary-color); /* Background color for file attachment */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background 0.3s ease; /* Smooth background transition */
+}
+
+/* Styling for file attachment text */
+.chat-container .user-messages .file-attachment span {
+  color: #1d7efd; /* Blue color for the file name */
+}
+
+/* Styling for the prompt container (input field at the bottom) */
+.prompt-container {
+  position: fixed; /* Fixed position at the bottom of the screen */
+  bottom: 0; /* Stick to the bottom */
+  left: 0; /* Align to the left */
+  width: 100%; /* Full width */
+  padding: 16px 0; /* Padding on top and bottom */
+  background: var(--primary-color); /* Background color */
+}
+
+/* Styling for elements inside the prompt container */
+.prompt-container :where(.prompt-wrapper, .prompt-form, .prompt-actions) {
+  display: flex; /* Use flexbox layout */
+  gap: 12px; /* Space between elements */
+  height: 56px; /* Fixed height */
+  align-items: center; /* Vertically align items */
+}
+
+/* Styling for the prompt form */
+.prompt-wrapper .prompt-form {
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  border-radius: 130px; /* Rounded corners for the form */
+  background: var(--secondary-color); /* Background color */
+}
+
+/* Styling for the input field in the prompt form */
+.prompt-form .prompt-input {
+  height: 100%; /* Full height */
+  width: 100%; /* Full width */
+  background: none; /* Remove background */
+  border: none; /* Remove border */
+  outline: none; /* Remove outline */
+  padding-left: 24px; /* Padding on the left */
+  color: var(--text-color); /* Text color */
+  font-size: 1rem; /* Font size for input field */
+  flex-grow: 1; /* Grow to fill the remaining space */
+}
+
+/* Placeholder styling */
+.prompt-form .prompt-input::placeholder {
+  color: var(--placehoalder-color); /* Placeholder text color */
+  font-size: 1rem; /* Font size for placeholder */
+}
+
+/* Styling for the button inside the prompt form */
+.prompt-wrapper button {
+  width: 56px; /* Fixed width for button */
+  height: 100%; /* Full height */
+  border: none; /* Remove border */
+  background: var(--secondary-color); /* Background color */
+  color: var(--text-color); /* Text color */
+  border-radius: 50%; /* Round button */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background 0.3s ease; /* Smooth background transition */
+  font-size: 1.4rem; /* Font size for button */
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+/* Hover effect for buttons */
+.prompt-wrapper :is(button:hover, .file-icon, #close-file-btn) {
+  background: var(
+    --secondary-hover-color
+  ); /* Change background color on hover */
+}
+
+/* Styling for the prompt actions (buttons next to input field) */
+.prompt-form .prompt-actions {
+  gap: 5px; /* Space between action buttons */
+  margin-right: 7px; /* Right margin for prompt actions */
+}
+
+/* Styling for file upload wrapper in the prompt */
+.prompt-wrapper .prompt-form :where(.file-upload-wrapper, button, img) {
+  position: relative; /* Position relative for nested elements */
+  width: 45px; /* Fixed width */
+  height: 45px; /* Fixed height */
+}
+
+/* Styling for the send button when prompt input is valid */
+.prompt-form #sent-prompt-btn {
+  color: #fff; /* White text */
+  background: #1d7efd; /* Blue background */
+  transition: background 0.3s ease; /* Smooth background transition */
+  display: none; /* Initially hidden */
+}
+
+/* Show send button when input is valid */
+.prompt-form .prompt-input:valid ~ .prompt-actions #sent-prompt-btn {
+  display: block; /* Show button when input is valid */
+}
+
+/* Hover effect for the send button */
+.prompt-form #sent-prompt-btn:hover {
+  background: #0264e3; /* Darker blue on hover */
+}
+
+/* Styling for file upload wrapper when file is attached */
+.prompt-form .file-upload-wrapper :where(button, img) {
+  position: absolute; /* Position absolutely for nested elements */
+  border-radius: 50%; /* Round buttons/icons */
+  object-fit: cover; /* Ensure image fits in the circle */
+  display: none; /* Initially hidden */
+}
+
+/* Display file upload button when no file is attached */
+.prompt-form .file-upload-wrapper #add-file-btn {
+  display: block; /* Show file upload button */
+}
+
+/* Display file icon and close button when a file is attached */
+.prompt-form .file-upload-wrapper.active.img-attached img,
+.prompt-form .file-upload-wrapper.active.file-attached .file-icon,
+.prompt-form .file-upload-wrapper.active:hover #close-file-btn {
+  display: block; /* Show icon and close button */
+}
+
+/* Hide add file button when a file is attached */
+.prompt-form .file-upload-wrapper.active #add-file-btn {
+  display: none; /* Hide button */
+}
+
+/* Close file button and stop response button */
+.prompt-form :is(#close-file-btn, #stop-response-btn:hover) {
+  color: #d62939; /* Red color */
+}
+
+/* Styling for the file icon */
+.prompt-form .file-icon {
+  color: #1d7efd; /* Blue color */
+}
+
+/* Styling for the stop response button and when bot is responding */
+.prompt-form #stop-response-btn,
+body.bot-responding .prompt-form .file-upload-wrapper {
+  display: none; /* Hide by default */
+}
+
+/* Show stop response button when bot is responding */
+body.bot-responding .prompt-form #stop-response-btn {
+  display: block; /* Show button */
+}
+
+/* Text displayed at the bottom of the prompt container */
+.prompt-container .disc-text {
+  text-align: center; /* Center the text */
+  font-size: 0.9rem; /* Font size */
+  padding: 16px 20px 0; /* Padding around the text */
+  color: var(--placehoalder-color); /* Placeholder color */
+}
+
+body.chat-active .container :where(.app-header, .suggestion) {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 20px 0px 100px;
+  }
+
+  .app-header :is(.heading, .sub-heading) {
+    font-size: 2rem;
+    line-height: 1.4;
+  }
+
+  .prompt-form .file-upload-wrapper.active #close-file-btn {
+    opacity: 0;
+  }
+
+  .prompt-wrapper.hide-controls :where(#theme-toggle-btn, #delete-chat-btn) {
+    display: none;
+  }
+}

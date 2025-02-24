@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Declares the document type as HTML and sets the language to English -->
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Specifies the character encoding for the document (UTF-8) -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Ensures the page is responsive and adjusts for different screen sizes -->
+
+    <title>BotConnect: Powered by Gemini AI</title>
+    <!-- Sets the title of the webpage to "BotConnect: Powered by Gemini AI" -->
+
+    <link rel="stylesheet" href="style.css" />
+    <!-- Links an external CSS file (style.css) for styling the page -->
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <!-- Links to a Google Font that loads Material Symbols for icons -->
+
+    <!-- Favicon for browsers, displaying as a 96x96 pixel icon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="/favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+
+    <!-- Favicon in SVG format for better scalability and quality -->
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+
+    <!-- Shortcut icon used by browsers (often shown in the tab) -->
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+
+    <!-- Apple touch icon for devices like iPhones and iPads (displayed on home screen) -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon/apple-touch-icon.png"
+    />
+
+    <!-- Web app manifest file that helps browsers and mobile apps integrate with the website -->
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Main container for the content -->
+      <header class="app-header">
+        <!-- Header section of the app -->
+        <h1 class="heading">Hello, There!</h1>
+        <!-- Main heading of the page -->
+        <h2 class="sub-heading">How can i help you, Today?</h2>
+        <!-- Subheading asking how assistance can be provided -->
+      </header>
+
+      <ul class="suggestion">
+        <!-- Unordered list for suggestion items -->
+        <li class="suggestion-item">
+          <!-- First suggestion item -->
+          <p class="suggestion-text">
+            <!-- Text content of the suggestion -->
+            Explain how to manage state in a React component using the
+            `useState` hook. Give an example.
+          </p>
+
+          <span class="material-symbols-outlined"> data_object </span>
+          <!-- Icon related to the suggestion -->
+        </li>
+
+        <li class="suggestion-item">
+          <!-- Second suggestion item -->
+          <p class="suggestion-text">
+            <!-- Text content of the suggestion -->
+            Provide an example of how to use the `useEffect` hook in a React
+            component to handle side effects.
+          </p>
+
+          <span class="material-symbols-outlined"> refresh </span>
+          <!-- Icon related to the suggestion -->
+        </li>
+
+        <li class="suggestion-item">
+          <!-- Third suggestion item -->
+          <p class="suggestion-text">
+            <!-- Text content of the suggestion -->
+            Explain how to create a responsive web page using CSS Grid or
+            Flexbox. Provide an example.
+          </p>
+
+          <span class="material-symbols-outlined"> view_module </span>
+          <!-- Icon related to the suggestion -->
+        </li>
+
+        <li class="suggestion-item">
+          <!-- Fourth suggestion item -->
+          <p class="suggestion-text">
+            <!-- Text content of the suggestion -->
+            Explain how to create a custom React hook for managing state and
+            side effects. Provide an example.
+          </p>
+
+          <span class="material-symbols-outlined"> code </span>
+          <!-- Icon related to the suggestion -->
+        </li>
+
+        <li class="suggestion-item">
+          <!-- Fifth suggestion item -->
+          <p class="suggestion-text">
+            <!-- Text content of the suggestion -->
+            Explain how to use the React Router library to create a multi-page
+            web application. Provide an example.
+          </p>
+
+          <span class="material-symbols-outlined"> router </span>
+          <!-- Icon related to the suggestion -->
+        </li>
+
+        <li class="suggestion-item">
+          <!-- Sixth suggestion item -->
+          <p class="suggestion-text">
+            <!-- Text content of the suggestion -->
+            Explain how to use the Redux library to create a state management
+            system in a React application. Provide an example.
+          </p>
+
+          <span class="material-symbols-outlined"> store </span>
+          <!-- Icon related to the suggestion -->
+        </li>
+
+        <li class="suggestion-item">
+          <!-- Seventh suggestion item -->
+          <p class="suggestion-text">
+            <!-- Text content of the suggestion -->
+            Explain how to create a custom React component using the functional
+            component syntax. Provide an example.
+          </p>
+
+          <span class="material-symbols-outlined"> frame_source </span>
+          <!-- Icon related to the suggestion -->
+        </li>
+      </ul>
+
+      <div class="chat-container"></div>
+      <!-- Container for the chat content -->
+
+      <div class="prompt-container">
+        <!-- Container for the prompt form and actions -->
+        <div class="prompt-wrapper">
+          <!-- Wrapper for the prompt form and actions -->
+          <form action="#" class="prompt-form">
+            <!-- Form to handle user input -->
+            <input
+              type="text"
+              placeholder="Ask BotConnect"
+              class="prompt-input"
+              required
+            />
+            <!-- Input field for users to ask questions -->
+
+            <div class="prompt-actions">
+              <!-- Container for action buttons related to the form -->
+              <div class="file-upload-wrapper">
+                <!-- Wrapper for file upload buttons -->
+                <img src="#" alt="Preview Image" class="file-preview" />
+                <!-- Image preview placeholder -->
+
+                <input
+                  type="file"
+                  accept="image/*, .pdf, .txt, .csv"
+                  id="file-input"
+                  hidden
+                />
+                <!-- Hidden file input for attaching files -->
+
+                <button
+                  class="file-icon material-symbols-outlined"
+                  type="button"
+                >
+                  description
+                </button>
+                <!-- Button for adding a file description -->
+
+                <button
+                  class="material-symbols-outlined"
+                  id="add-file-btn"
+                  type="button"
+                >
+                  attach_file
+                </button>
+                <!-- Button for attaching a file -->
+
+                <button
+                  class="material-symbols-outlined"
+                  id="close-file-btn"
+                  type="button"
+                >
+                  close
+                </button>
+                <!-- Button for closing the file attachment -->
+              </div>
+
+              <button
+                class="material-symbols-outlined"
+                id="stop-response-btn"
+                type="button"
+              >
+                stop_circle
+              </button>
+              <!-- Button to stop the chatbot's response -->
+
+              <button
+                class="material-symbols-outlined"
+                id="sent-prompt-btn"
+                type="submit"
+              >
+                arrow_upward
+              </button>
+              <!-- Button to submit the user's prompt -->
+            </div>
+          </form>
+
+          <button id="theme-toggle-btn" class="material-symbols-outlined">
+            light_mode
+          </button>
+          <!-- Button to toggle the light/dark theme -->
+          <button id="delete-chat-btn" class="material-symbols-outlined">
+            delete
+          </button>
+          <!-- Button to delete the chat -->
+        </div>
+
+        <p class="disc-text">
+          BotConnect can make mistakes, so double check it.
+        </p>
+        <!-- Disclaimer about the chatbot's accuracy -->
+      </div>
+    </div>
+
+    <script src="/app.js"></script>
+    <!-- External JavaScript file (app.js) for functionality -->
+  </body>
+</html>
+
+<!-- <div class="message user-messages">
+  User Messages will be dynamically added here
+  <p class="text-message">What's the weather like today?</p>
+</div>
+
+<div class="message bot-messages">
+  <img src="/gemini-chatbot-logo.svg" alt="Logo" class="avatar" />
+  Bot Messages will be dynamically added here
+  <p class="text-message">It's sunny today! It feels like a warm day.</p>
+</div> -->
