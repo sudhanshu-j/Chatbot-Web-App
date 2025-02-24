@@ -184,7 +184,7 @@ We welcome contributions from everyone! Here's how you can contribute:
 
 Check out the live version of the chatbot web app hosted online! Click the link below to start interacting with the bot in real-time:
 
-[Live Demo 🚀](botconnect.netlify.app)
+[Live Demo 🚀](https://botconnect.netlify.app/)
 
 Feel free to test out the chat features, upload files, and switch between light/dark themes! 🌗✨
 
